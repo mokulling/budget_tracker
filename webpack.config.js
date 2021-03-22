@@ -10,6 +10,7 @@ const config = {
   mode: "production",
   plugins: [
     new WebpackPwaManifest({
+      publicPath: "/dist",
       filename: "manifest.json",
       inject: false,
       fingerprints: false,
@@ -18,13 +19,13 @@ const config = {
       theme_color: "#ffffff",
       background_color: "#ffffff",
       start_url: "/",
-      display: "standalone",
+      crossorigin: "use-credentials",
 
       icons: [
         {
           src: path.resolve(
             __dirname,
-            "public/assets/icons/icon-512x512.png"
+            "public/icons/icon-512x512.png"
             ),
           size: [192, 512]
         }
